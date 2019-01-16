@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bogosort</title>
+
+    <!-- Link to CSS Reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Link to Stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Link to JavaScript -->
+    <script src="assets/javascript/bogosort.js"></script>
+</head>
+<body>
+<!-- Jumbotron for Title -->
+<div class="jumbotron" style="height: 50px;">
+    <h1 class="text-center" id="main-header">The Bogosorter</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <!-- Game Card -->
+      <div class="col-lg-12">
+        <div class="card">
+          <h3 class="card-header">Bogosort</h3>
+          <div class="card-body">
+            <h2 id="politely-ask-user">Please enter a comma'd list of numbers</h2>
+            <br>
+            <form id="the-form">
+                <h4>Your List:</h4>
+                <input type="text" id="text-box" name="your-list" value=""><br><br>
+                <h4>Timout (In Loops):</h4>
+                <input type="text" id="timeout-box" name="change-timeout" disabled="true"  value="10000000">    
+                <input type="checkbox" id="risks" value="unchecked">  I know the risks. Let me change the timeout.
+            </form>
+            <br>
+            <button id="sub" class="btn btn-dark"><h4>Submit</h4></button>
+          </div>
+          <div id="results">
+            <h5 class="result" id="original-list"></h5><br>
+            <h5 class="result" id="sorted-list"></h5><br>
+            <h5 class="result" id="status"></h5><br>
+            <h5 class="result" id="time"></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
