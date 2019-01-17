@@ -71,7 +71,7 @@ $(document).ready(function() {
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's extremely bad!");
                 } else if(timeTaken > 5) {
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's really bad!");
-                } else if(timeTaken > 2.5){
+                } else if(timeTaken > 1.5){
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's pretty bad!");
                 } else {
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's reasonable, I guess...");
