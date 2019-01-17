@@ -39,18 +39,37 @@ $(document).ready(function() {
         }
         $("#status").css("font-weight", "bold");
         if(valid) {
+            var placeholder = cloneArray(arrToSort);
             bogosort(arrToSort);
             var t1 = performance.now();
             var timeTaken = ((t1 - t0)/1000);
-            $("#original-list").text("Original List: " + document.getElementById("the-form").elements[0].value);
+            var toPrint = ""
+            for(var i = 0; i < placeholder.length - 1; i++) {
+                toPrint += placeholder[i];
+                toPrint += ", "
+            }
+            toPrint += placeholder[placeholder.length - 1];
+            $("#original-list").text("Original List:  " + toPrint);
             $("#status").css("color", "black");
             $("#time").css("color", "black");
             $("#time").css("font-weight", "normal");
 
             if(checkSorted(arrToSort)) {
-                $("#sorted-list").text("Sorted List: " + arrToSort.toString());
+                toPrint = "";
+                for(var i = 0; i < arrToSort.length - 1; i++) {
+                    toPrint += arrToSort[i];
+                    toPrint += ", "
+                }
+                toPrint += arrToSort[arrToSort.length - 1];
+                $("#sorted-list").text("Sorted List:  " + toPrint);
                 $("#status").text("Success! To sort your list, Bogosort looped " + itr + " times!");
-                if(timeTaken > 5) {
+                if(timeTaken > 300) {
+                    $("#time").text("That amount of looping took " + timeTaken + " seconds! Are you serious?!");
+                } else if(timeTaken > 100) {
+                    $("#time").text("That amount of looping took " + timeTaken + " seconds! That's absurdly bad!");
+                } else if(timeTaken > 15) {
+                    $("#time").text("That amount of looping took " + timeTaken + " seconds! That's extremely bad!");
+                } else if(timeTaken > 5) {
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's really bad!");
                 } else if(timeTaken > 2.5){
                     $("#time").text("That amount of looping took " + timeTaken + " seconds! That's pretty bad!");
@@ -160,6 +179,7 @@ $(document).ready(function() {
         }
     }); 
 
+    // Handler that displays or hides the "About Bogosort" section when the About Bogosort button is clicked
     $("#about-bogo").click(function() {
         if(!abtBogo) {
             $("#bogo-description").css("display", "block");
@@ -170,6 +190,7 @@ $(document).ready(function() {
         }
     });
 
+    // Handler that displays or hides the "About Timeout" section when the About Timeout button is clicked
     $("#about-timeout").click(function() {
         if(!abtTimeout) {
             $("#timeout-description").css("display", "block");

@@ -33,7 +33,7 @@
             <form id="the-form">
                 <h4>Your List:</h4>
                 <input type="text" id="text-box" name="your-list" value=""><br><br>
-                <h4>Timout (In Loops):</h4>
+                <h4>Timeout (In Loops):</h4>
                 <input type="text" id="timeout-box" name="change-timeout" disabled="true"  value="10000000">    
                 <input type="checkbox" id="risks" value="unchecked">  I know the risks. Let me change the timeout.
             </form>
@@ -57,13 +57,13 @@
               algorithm. It works by randomly shuffling the given list, then verifying whether or not it is sorted. If the list is not sorted, it randomly shuffles it
               repeatedly until it is sorted. This is really horrible.<br>
               You can imagine this algorithm using a metaphor. Imagine holding a deck of cards that you want to arrange into sorted order. Using Bogosort would be like
-              dumping all the cards onto the floor, picking them up randomly, and checking if the deck is now sorted. If not, you'd dump them on the floor again until it is.<br>
+              dumping all the cards onto the floor, picking them up randomly, and checking if the deck is now sorted. If not, you'd dump the cards onto the floor again until it is.<br>
               The algorithm has an average runtime of O(n*n!), which is basically appalling. Hypothetically, no matter how long the list passed into Bogosort is,
               it may never actually end up sorted due to its random nature.<br>
               Bogosort is utterly useless as an actual sorting algorithm, but it makes for a fun joke and is useful instructional material for students learning algorithms as it
               can be compared to much more efficient sorting methods.</p>
               <button id="about-timeout" class="btn btn-dark" style="width: 30%; margin-left: 35%;"><h4>What Is Timeout?</h4></button><br><br>
-              <p id="timeout-description" style="display: none;">The timeout variable determines how many times the Bogosort algorithm will be allowed to loop before
+              <p id="timeout-description" style="display: none;">The Timeout variable determines how many times the Bogosort algorithm will be allowed to loop before
               it is forced to stop. The default is 10000000 (ten million), which is enough to fairly reliably sort a list of 10 items or less. (Bogosort is random, so
               even lists of less than 10 items might reach the default timeout.)<br>
               Adjusting the timeout will allow you to process longer lists, but be aware that the runtime will increase exponentially with the list size. It could become
