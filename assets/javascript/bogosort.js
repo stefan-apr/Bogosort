@@ -2,6 +2,8 @@ $(document).ready(function() {
     var input = "";
     var itr = 0;
     var reachedTimeout = false;
+    var abtBogo = false;
+    var abtTimeout = false;
     document.getElementById("risks").checked = false;
     $("#timeout-box").attr("disabled", "true");
 
@@ -155,6 +157,26 @@ $(document).ready(function() {
         } else {
             $(timeoutBox).removeAttr("disabled");
             $(val).attr("value", "checked");
+        }
+    }); 
+
+    $("#about-bogo").click(function() {
+        if(!abtBogo) {
+            $("#bogo-description").css("display", "block");
+            abtBogo = true;
+        } else {
+            $("#bogo-description").css("display", "none");
+            abtBogo = false;
+        }
+    });
+
+    $("#about-timeout").click(function() {
+        if(!abtTimeout) {
+            $("#timeout-description").css("display", "block");
+            abtTimeout = true;
+        } else {
+            $("#timeout-description").css("display", "none");
+            abtTimeout = false;
         }
     }); 
 });
